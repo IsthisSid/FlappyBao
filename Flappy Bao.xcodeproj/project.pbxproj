@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF5B9170252670B300462DE7 /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5B916F252670B300462DE7 /* MainMenuScene.swift */; };
 		FFEA1C50251FBA8800E007E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA1C4F251FBA8800E007E8 /* AppDelegate.swift */; };
 		FFEA1C52251FBA8800E007E8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FFEA1C51251FBA8800E007E8 /* GameScene.sks */; };
 		FFEA1C54251FBA8800E007E8 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = FFEA1C53251FBA8800E007E8 /* Actions.sks */; };
@@ -16,6 +17,9 @@
 		FFEA1C5D251FBA8C00E007E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFEA1C5C251FBA8C00E007E8 /* Assets.xcassets */; };
 		FFEA1C68251FBA8C00E007E8 /* Flappy_BaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA1C67251FBA8C00E007E8 /* Flappy_BaoTests.swift */; };
 		FFEA1C73251FBA8C00E007E8 /* Flappy_BaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA1C72251FBA8C00E007E8 /* Flappy_BaoUITests.swift */; };
+		FFEA1C89251FBB9600E007E8 /* CoinSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FFEA1C88251FBB9600E007E8 /* CoinSound.mp3 */; };
+		FFEA1C8E251FBD7400E007E8 /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEA1C8D251FBD7400E007E8 /* GameElements.swift */; };
+		FFEA1CA72520783A00E007E8 /* player.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FFEA1CA62520783A00E007E8 /* player.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FF5B916F252670B300462DE7 /* MainMenuScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
 		FFEA1C4C251FBA8800E007E8 /* Flappy Bao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flappy Bao.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEA1C4F251FBA8800E007E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFEA1C51251FBA8800E007E8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -44,13 +49,16 @@
 		FFEA1C57251FBA8800E007E8 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FFEA1C5A251FBA8800E007E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFEA1C5C251FBA8C00E007E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FFEA1C5E251FBA8C00E007E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFEA1C63251FBA8C00E007E8 /* Flappy BaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flappy BaoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEA1C67251FBA8C00E007E8 /* Flappy_BaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flappy_BaoTests.swift; sourceTree = "<group>"; };
 		FFEA1C69251FBA8C00E007E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFEA1C6E251FBA8C00E007E8 /* Flappy BaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Flappy BaoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFEA1C72251FBA8C00E007E8 /* Flappy_BaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flappy_BaoUITests.swift; sourceTree = "<group>"; };
 		FFEA1C74251FBA8C00E007E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFEA1C88251FBB9600E007E8 /* CoinSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CoinSound.mp3; sourceTree = "<group>"; };
+		FFEA1C8D251FBD7400E007E8 /* GameElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
+		FFEA1C92251FBE1C00E007E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFEA1CA62520783A00E007E8 /* player.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = player.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,11 +112,15 @@
 				FFEA1C4F251FBA8800E007E8 /* AppDelegate.swift */,
 				FFEA1C51251FBA8800E007E8 /* GameScene.sks */,
 				FFEA1C53251FBA8800E007E8 /* Actions.sks */,
+				FF5B916F252670B300462DE7 /* MainMenuScene.swift */,
 				FFEA1C55251FBA8800E007E8 /* GameScene.swift */,
 				FFEA1C57251FBA8800E007E8 /* GameViewController.swift */,
+				FFEA1C8D251FBD7400E007E8 /* GameElements.swift */,
 				FFEA1C59251FBA8800E007E8 /* Main.storyboard */,
 				FFEA1C5C251FBA8C00E007E8 /* Assets.xcassets */,
-				FFEA1C5E251FBA8C00E007E8 /* Info.plist */,
+				FFEA1CA62520783A00E007E8 /* player.atlas */,
+				FFEA1C92251FBE1C00E007E8 /* Info.plist */,
+				FFEA1C88251FBB9600E007E8 /* CoinSound.mp3 */,
 			);
 			path = "Flappy Bao";
 			sourceTree = "<group>";
@@ -234,7 +246,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFEA1CA72520783A00E007E8 /* player.atlas in Resources */,
 				FFEA1C5B251FBA8800E007E8 /* Main.storyboard in Resources */,
+				FFEA1C89251FBB9600E007E8 /* CoinSound.mp3 in Resources */,
 				FFEA1C52251FBA8800E007E8 /* GameScene.sks in Resources */,
 				FFEA1C5D251FBA8C00E007E8 /* Assets.xcassets in Resources */,
 				FFEA1C54251FBA8800E007E8 /* Actions.sks in Resources */,
@@ -262,6 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF5B9170252670B300462DE7 /* MainMenuScene.swift in Sources */,
+				FFEA1C8E251FBD7400E007E8 /* GameElements.swift in Sources */,
 				FFEA1C56251FBA8800E007E8 /* GameScene.swift in Sources */,
 				FFEA1C58251FBA8800E007E8 /* GameViewController.swift in Sources */,
 				FFEA1C50251FBA8800E007E8 /* AppDelegate.swift in Sources */,
@@ -362,7 +378,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -417,7 +433,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
