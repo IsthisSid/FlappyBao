@@ -1,15 +1,43 @@
 //
-//  GameScene.swift
-//  HelloWorld
+//  MainMenuScene.swift
+//  Flappy Bao
 //
-//  Created by Sidany Walker on 9/30/20.
+//  Created by Sidany Walker on 10/6/20.
 //
 import UIKit
 import SpriteKit
 import GameplayKit
 
 class MainMenuScene: SKScene {
-    var highscoreLbl = SKLabelNode()
+    //These buttons inherit properties from the ButtonElements class blueprint.
+
+    lazy var playButton: ButtonElements = {
+        var buttonPlay = ButtonElements(imageNamed: "play") {
+            let levelOneScene = LevelOneScene(size: (self.view!.bounds.size))
+            self.view!.presentScene(levelOneScene)
+        }
+        buttonPlay.zPosition = 0
+        return buttonPlay
+    }()
+    
+    lazy var noadsButton: ButtonElements = {
+        var buttonAds = ButtonElements(imageNamed: "noadsButton") {
+            let noadsScene = ChooseLevelScene(size: (self.view!.bounds.size))
+            self.view!.presentScene(noadsScene)
+        }
+        buttonAds.zPosition = 0
+        return buttonAds
+    }()
+    
+    lazy var levelsButton: ButtonElements = {
+        var buttonLevels = ButtonElements(imageNamed: "chooseLevels") {
+            let levelsScene = ChooseLevelScene(size: (self.view!.bounds.size))
+            self.view!.presentScene(levelsScene)
+        }
+        buttonLevels.zPosition = 0
+        return buttonLevels
+    }()
+    
     var birdFrames: [SKTexture]?
     required init?(coder aDecoder:NSCoder) {
         super.init(coder: aDecoder)
@@ -29,119 +57,23 @@ class MainMenuScene: SKScene {
         self.birdFrames = frames
     }
     
-    func flyBird() {
-        let texture = self.birdFrames![0]
-        let bird = SKSpriteNode(texture: texture)
-        bird.size = CGSize(width: 50, height: 50)
-        
-        let randomBirdYPostionGenerator = GKRandomDistribution(lowestValue:50, highestValue: Int(self.frame.size.height))
-        let yPosition = CGFloat(randomBirdYPostionGenerator.nextInt())
-        
-        let rightToLeft = arc4random() % 2 == 0
-        
-        let xPosition = rightToLeft ? self.frame.size.width + bird.size.width / 2 : -bird.size.width / 2
-        bird.position = CGPoint(x: xPosition, y: yPosition)
-        
-        if rightToLeft {
-            bird.xScale = -1
-            
-        }
-        self.addChild(bird)
-        bird.run(SKAction.repeatForever(SKAction.animate(with: self.birdFrames!, timePerFrame: 0.05, resize: false, restore: true)))
-        var distanceToCover = self.frame.size.width + bird.size.width
-        
-        if rightToLeft {
-            distanceToCover *= -1
-        }
-        let time = TimeInterval(abs(distanceToCover / 40))
-        let moveAction = SKAction.moveBy(x: distanceToCover, y: 0, duration: time)
-        let removeAction = SKAction.run {
-            bird.removeAllActions()
-        }
-        let allActions = SKAction.sequence([moveAction, removeAction])
-        bird.run(allActions)
-    }
+    //In order for these buttons and functions to appear on the screen, they must be called here () or 'addChild()' and the positions can be specified.
     override func didMove(to view: SKView) {
-        for i in 0..<2
-        {
-        let background = SKSpriteNode(imageNamed: "bg")
-        background.anchorPoint = CGPoint.init(x: 0, y: 0)
-        background.position = CGPoint(x:CGFloat(i) * self.frame.width, y:0)
-        background.name = "background"
-        background.size = (self.view?.bounds.size)!
-        self.addChild(background)
-        }
-        self.backgroundColor = SKColor.green
-        let button = SKSpriteNode(imageNamed: "play")
-            button.position = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2)
-            button.name = "nextButton"
+        mainBackground()
         flyBird()
-        self.addChild(button)
-        addLogo()
-        addLabels()
-//        addPlayButton()
-        highscoreLbl = createHighscoreLabel()
-        self.addChild(highscoreLbl)
-    }
-    func addLogo() {
-        let logo = SKSpriteNode(imageNamed: "logo")
-        logo.size = CGSize(width: 300, height: 150)
-        logo.position = CGPoint(x: frame.midX, y: frame.midY + frame.size.height/4)
-        addChild(logo)
-    }
-    func addLabels() {
-        let playLabel = SKLabelNode(text: "Tap Me to Play!")
-        playLabel.position = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2 - 60)
-        playLabel.fontName = "AvenirNext-Bold"
-        playLabel.fontSize = 10.0
-        playLabel.fontColor = UIColor.white
-        addChild(playLabel)
+        
+        playButton.position = CGPoint(x: self.frame.size.width/2, y: self.frame.size.height/2 - 80)
+        addChild(playButton)
+        
+        noadsButton.position = CGPoint(x: self.frame.size.width/2 - 70, y: self.frame.size.height/2 - 150)
+        addChild(noadsButton)
+        
+        levelsButton.position = CGPoint(x: self.frame.size.width/2 + 70, y: self.frame.size.height/2 - 150)
+        addChild(levelsButton)
         
     }
-        
-   
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
-    {
-        if let touch = touches.first {
-            let location = touch.location(in: self)
-            let nodesarray = nodes(at: location)
-               
-            for node in nodesarray {
-                if node.name == "nextButton" {
-                    let gameScene = GameScene(size: view!.bounds.size)
-                    view!.presentScene(gameScene)
-                }
-            }
-        }
-    }
-        
-
-            
-        }
-    
+       
+}
 
 
-//        let gameSceneTemp = GameScene(fileNamed: "GameScene")
-//        gameSceneTemp?.scaleMode = .aspectFill
-//        self.view?.presentScene(gameSceneTemp!, transition: SKTransition.doorsCloseHorizontal(withDuration: 1.0))
-        
-//        enumerateChildNodes(withName: "//*") { (node, stop) in
-//
-//            }
-        
-        
-    
-//    func addPlayButton() {
-//        let playButton = SKSpriteNode(imageNamed: "play")
-//        playButton.name = "playButton"
-//        playButton.position = CGPoint.zero
-//        addChild(playButton)
-    
-    
-    
-
-//    override func update(_ currentTime: TimeInterval) {
-//        // Called before each frame is rendered
-//    }
 
