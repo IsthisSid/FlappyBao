@@ -104,20 +104,20 @@ extension LevelThreeScene {
     
     func createWalls() -> SKNode {
         
-        let sushiNode = SKSpriteNode(imageNamed: "fishie")
-        sushiNode.size = CGSize(width: 40, height: 40)
-        sushiNode.position = CGPoint(x: self.frame.width, y: self.frame.height / 2 - 80)
-        sushiNode.physicsBody = SKPhysicsBody(rectangleOf: sushiNode.size)
-        sushiNode.physicsBody?.affectedByGravity = false
-        sushiNode.physicsBody?.isDynamic = false
-        sushiNode.physicsBody?.categoryBitMask = PhysicsCategory.sushiCategory
-        sushiNode.physicsBody?.collisionBitMask = 0
-        sushiNode.physicsBody?.contactTestBitMask = PhysicsCategory.birdCategory
-        sushiNode.color = SKColor.blue
+        let fishieNode = SKSpriteNode(imageNamed: "fishie")
+        fishieNode.size = CGSize(width: 40, height: 40)
+        fishieNode.position = CGPoint(x: self.frame.width, y: self.frame.height / 2 - 80)
+        fishieNode.physicsBody = SKPhysicsBody(rectangleOf: fishieNode.size)
+        fishieNode.physicsBody?.affectedByGravity = false
+        fishieNode.physicsBody?.isDynamic = false
+        fishieNode.physicsBody?.categoryBitMask = PhysicsCategory.sushiCategory
+        fishieNode.physicsBody?.collisionBitMask = 0
+        fishieNode.physicsBody?.contactTestBitMask = PhysicsCategory.birdCategory
+        fishieNode.color = SKColor.blue
         
         wallPair = SKNode()
         wallPair.name = "wallPair"
-        wallPair.addChild(sushiNode)
+        wallPair.addChild(fishieNode)
         
         let topWall = SKSpriteNode(imageNamed: "topPaw")
         let btmWall = SKSpriteNode(imageNamed: "bottomPaw")

@@ -104,16 +104,16 @@ extension LevelTwoScene {
     
     func createWalls() -> SKNode  {
         // 1
-        let sushiNode = SKSpriteNode(imageNamed: "cuteCabbage")
-        sushiNode.size = CGSize(width: 40, height: 40)
-        sushiNode.position = CGPoint(x: self.frame.width + 25, y: self.frame.height / 2 + 20)
-        sushiNode.physicsBody = SKPhysicsBody(rectangleOf: sushiNode.size)
-        sushiNode.physicsBody?.affectedByGravity = false
-        sushiNode.physicsBody?.isDynamic = false
-        sushiNode.physicsBody?.categoryBitMask = CollisionBitMask.sushiCategory
-        sushiNode.physicsBody?.collisionBitMask = 0
-        sushiNode.physicsBody?.contactTestBitMask = CollisionBitMask.birdCategory
-        sushiNode.color = SKColor.blue
+        let cabbageNode = SKSpriteNode(imageNamed: "cuteCabbage")
+        cabbageNode.size = CGSize(width: 40, height: 40)
+        cabbageNode.position = CGPoint(x: self.frame.width + 25, y: self.frame.height / 2 + 20)
+        cabbageNode.physicsBody = SKPhysicsBody(rectangleOf: cabbageNode.size)
+        cabbageNode.physicsBody?.affectedByGravity = false
+        cabbageNode.physicsBody?.isDynamic = false
+        cabbageNode.physicsBody?.categoryBitMask = CollisionBitMask.sushiCategory
+        cabbageNode.physicsBody?.collisionBitMask = 0
+        cabbageNode.physicsBody?.contactTestBitMask = CollisionBitMask.birdCategory
+        cabbageNode.color = SKColor.blue
          
         // 2
         wallPair = SKNode()
@@ -152,7 +152,7 @@ extension LevelTwoScene {
         // 3
         let randomPosition = random(min: -50, max: 50)
         wallPair.position.y = wallPair.position.y +  randomPosition
-        wallPair.addChild(sushiNode)
+        wallPair.addChild(cabbageNode)
         
         wallPair.run(moveAndRemove)
         

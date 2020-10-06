@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "noadsButton.png",
+      "filename" : "noAdsButton.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "noadsButton@2x.png",
+      "filename" : "noAdsButton@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "noadsButton@3x.png",
+      "filename" : "noAdsButton@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
