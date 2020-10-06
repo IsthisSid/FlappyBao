@@ -141,7 +141,8 @@ class LevelOneScene: SKScene, SKPhysicsContactDelegate {
         Ground.size = CGSize(width: 320, height: 100)
         Ground.position = CGPoint(x: self.frame.width / 2, y: self.frame.width - 270)
         
-        Ground.physicsBody = SKPhysicsBody(rectangleOf: Ground.size)
+        Ground.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: Ground.size.width / 1.10,
+                                                               height: Ground.size.height / 1.10))
         Ground.physicsBody?.categoryBitMask = CollisionBitMask.Ground
         Ground.physicsBody?.collisionBitMask = CollisionBitMask.birdCategory
         Ground.physicsBody?.contactTestBitMask = CollisionBitMask.birdCategory
